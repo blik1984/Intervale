@@ -1,18 +1,20 @@
-
+/*
+ * Р’ РєР»Р°СЃСЃРµ Storage РЅСѓР¶РЅРѕ РїСЂРѕРїРёСЃР°С‚СЊ СЂРµР°Р»СЊРЅСѓСЋ РїР°РїРєСѓ, РєСѓРґР° Р±СѓРґРµС‚ СЃРѕС…СЂР°РЅСЏС‚СЊСЃСЏ Р±РёР±Р»РёРѕС‚РµРєР°
+ */
 import java.util.*;
 
 public class Main {
 
 	public static void main(String[] args) {
 		
-		Book book1 = new Book("Рога и копыта", "Остап Бендер", "АСТ", 1666, 113, 14.5, "книга");
-		Book book2 = new Book("Философия", "Иван Бендер", "Ширпотрёппечать", 2023, 99, 100, "журнал");
-		Book book3 = new Book("Методы приготовления шиншилл", "Дроздов", "Живой мир", 2000, 543, 68.9, "газета");
-		Book book4 = new Book("Рога", "Остап", "Знания", 2021, 56, 51.9, "книга");
-		Book book5 = new Book("копыта", "Бендер", "АСТ", 2000, 113, 5, "книга");
-		Book book6 = new Book("И", "Остап Бендер", "Знания", 1997, 236, 777, "фолиант");
-		Book book7 = new Book("Энтомология", "Шванвич", "АСТ", 1948, 300, 450, "газета");
-		Book book8 = new Book("Энтомология", "Шванвич", "Знания", 1908, 300, 450, "газета");
+		Book book1 = new Book("Р РѕРіР° Рё РєРѕРїС‹С‚Р°", "РћСЃС‚Р°Рї Р‘РµРЅРґРµСЂ", "РђРЎРў", 1666, 113, 14.5, "РєРЅРёРіР°");
+		Book book2 = new Book("Р¤РёР»РѕСЃРѕС„РёСЏ", "РРІР°РЅ Р‘РµРЅРґРµСЂ", "РЁРёСЂРїРѕС‚СЂС‘РїРїРµС‡Р°С‚СЊ", 2023, 99, 100, "Р¶СѓСЂРЅР°Р»");
+		Book book3 = new Book("РњРµС‚РѕРґС‹ РїСЂРёРіРѕС‚РѕРІР»РµРЅРёСЏ С€РёРЅС€РёР»Р»", "Р”СЂРѕР·РґРѕРІ", "Р–РёРІРѕР№ РјРёСЂ", 2000, 543, 68.9, "РіР°Р·РµС‚Р°");
+		Book book4 = new Book("Р РѕРіР°", "РћСЃС‚Р°Рї", "Р—РЅР°РЅРёСЏ", 2021, 56, 51.9, "РєРЅРёРіР°");
+		Book book5 = new Book("РєРѕРїС‹С‚Р°", "Р‘РµРЅРґРµСЂ", "РђРЎРў", 2000, 113, 5, "РєРЅРёРіР°");
+		Book book6 = new Book("Р", "РћСЃС‚Р°Рї Р‘РµРЅРґРµСЂ", "Р—РЅР°РЅРёСЏ", 1997, 236, 777, "С„РѕР»РёР°РЅС‚");
+		Book book7 = new Book("Р­РЅС‚РѕРјРѕР»РѕРіРёСЏ", "РЁРІР°РЅРІРёС‡", "РђРЎРў", 1948, 300, 450, "РіР°Р·РµС‚Р°");
+		Book book8 = new Book("Р­РЅС‚РѕРјРѕР»РѕРіРёСЏ", "РЁРІР°РЅРІРёС‡", "Р—РЅР°РЅРёСЏ", 1908, 300, 450, "РіР°Р·РµС‚Р°");
 
 		Library library = new Library();
 		
@@ -27,27 +29,27 @@ public class Main {
 
 		
 		/*
-		 * Выводим начальную библиотеку
+		 * Р’С‹РІРѕРґРёРј РЅР°С‡Р°Р»СЊРЅСѓСЋ Р±РёР±Р»РёРѕС‚РµРєСѓ
 		 */
-		System.out.println("Начальная библиотека");
+		System.out.println("РќР°С‡Р°Р»СЊРЅР°СЏ Р±РёР±Р»РёРѕС‚РµРєР°");
 		ArrayList<Book>BookLib1 = library.getLibrary();
 		System.out.println(BookLib1);
 		
 		/*
-		 * Проверили наличие каталогов
+		 * РџСЂРѕРІРµСЂРёР»Рё РЅР°Р»РёС‡РёРµ РєР°С‚Р°Р»РѕРіРѕРІ
 		 */
-		System.out.println("\nСозданы каталоги");
-		System.out.println("Названия изданий: " + library.getBookNames());
-		System.out.println("Авторы: " + library.getAuthors());
-		System.out.println("Издательства: " + library.getPublishingHouses());
-		System.out.println("Годы издания: " + library.getPublishingYears());
-		System.out.println("Виды публикаций: " + library.getKinds());
-		System.out.println("Ключ - Id, значение - индекс хранения: " + library.getIndices());
+		System.out.println("\nРЎРѕР·РґР°РЅС‹ РєР°С‚Р°Р»РѕРіРё");
+		System.out.println("РќР°Р·РІР°РЅРёСЏ РёР·РґР°РЅРёР№: " + library.getBookNames());
+		System.out.println("РђРІС‚РѕСЂС‹: " + library.getAuthors());
+		System.out.println("РР·РґР°С‚РµР»СЊСЃС‚РІР°: " + library.getPublishingHouses());
+		System.out.println("Р“РѕРґС‹ РёР·РґР°РЅРёСЏ: " + library.getPublishingYears());
+		System.out.println("Р’РёРґС‹ РїСѓР±Р»РёРєР°С†РёР№: " + library.getKinds());
+		System.out.println("РљР»СЋС‡ - Id, Р·РЅР°С‡РµРЅРёРµ - РёРЅРґРµРєСЃ С…СЂР°РЅРµРЅРёСЏ: " + library.getIndices());
 
 		/*
-		 * записали и прочитали библиотеку из файла
+		 * Р·Р°РїРёСЃР°Р»Рё Рё РїСЂРѕС‡РёС‚Р°Р»Рё Р±РёР±Р»РёРѕС‚РµРєСѓ РёР· С„Р°Р№Р»Р°
 		 */
-		System.out.println("\nБиблиотека после записи в файл и обратного чтения");
+		System.out.println("\nР‘РёР±Р»РёРѕС‚РµРєР° РїРѕСЃР»Рµ Р·Р°РїРёСЃРё РІ С„Р°Р№Р» Рё РѕР±СЂР°С‚РЅРѕРіРѕ С‡С‚РµРЅРёСЏ");
 		ArrayList<Book> bookLib = new ArrayList<Book>(library.getLibrary());
 		Storage.setLiba(bookLib);
 		ArrayList<Book>newBookLib = Storage.readLiba();
@@ -55,46 +57,46 @@ public class Main {
 		System.out.println(library.getLibrary());
 		
 		/*
-		 * добавили ещё одну книгу проверили что запись и чтение из файла работает.
+		 * РґРѕР±Р°РІРёР»Рё РµС‰С‘ РѕРґРЅСѓ РєРЅРёРіСѓ РїСЂРѕРІРµСЂРёР»Рё С‡С‚Рѕ Р·Р°РїРёСЃСЊ Рё С‡С‚РµРЅРёРµ РёР· С„Р°Р№Р»Р° СЂР°Р±РѕС‚Р°РµС‚.
 		 */
-		System.out.println("\nДобавим издание в каталог");
+		System.out.println("\nР”РѕР±Р°РІРёРј РёР·РґР°РЅРёРµ РІ РєР°С‚Р°Р»РѕРі");
 		library.addBook(book8);
 		System.out.println(library.getLibrary());
 		
 		/*
-		 * Проверили обновление каталогов
+		 * РџСЂРѕРІРµСЂРёР»Рё РѕР±РЅРѕРІР»РµРЅРёРµ РєР°С‚Р°Р»РѕРіРѕРІ
 		 */
-		System.out.println("\nКаталоги после добавления издания");
-		System.out.println("\nНазвания изданий: " + library.getBookNames());
-		System.out.println("Авторы: " + library.getAuthors());
-		System.out.println("Издательства: " + library.getPublishingHouses());
-		System.out.println("Годы издания: " + library.getPublishingYears());
-		System.out.println("Виды публикаций: " + library.getKinds());
-		System.out.println("Ключ - Id, значение - индекс хранения: " + library.getIndices());
+		System.out.println("\nРљР°С‚Р°Р»РѕРіРё РїРѕСЃР»Рµ РґРѕР±Р°РІР»РµРЅРёСЏ РёР·РґР°РЅРёСЏ");
+		System.out.println("\nРќР°Р·РІР°РЅРёСЏ РёР·РґР°РЅРёР№: " + library.getBookNames());
+		System.out.println("РђРІС‚РѕСЂС‹: " + library.getAuthors());
+		System.out.println("РР·РґР°С‚РµР»СЊСЃС‚РІР°: " + library.getPublishingHouses());
+		System.out.println("Р“РѕРґС‹ РёР·РґР°РЅРёСЏ: " + library.getPublishingYears());
+		System.out.println("Р’РёРґС‹ РїСѓР±Р»РёРєР°С†РёР№: " + library.getKinds());
+		System.out.println("РљР»СЋС‡ - Id, Р·РЅР°С‡РµРЅРёРµ - РёРЅРґРµРєСЃ С…СЂР°РЅРµРЅРёСЏ: " + library.getIndices());
 
 		
 		/*
-		 * Изменяем внигу(по Id), сохраняем, проверяем обновление каталогов
+		 * РР·РјРµРЅСЏРµРј РІРЅРёРіСѓ(РїРѕ Id), СЃРѕС…СЂР°РЅСЏРµРј, РїСЂРѕРІРµСЂСЏРµРј РѕР±РЅРѕРІР»РµРЅРёРµ РєР°С‚Р°Р»РѕРіРѕРІ
 		 */
-		System.out.println("\nИзменяем автора книги с Id 5");
-		String newAuthor = "Колодий П.В.";
+		System.out.println("\nРР·РјРµРЅСЏРµРј Р°РІС‚РѕСЂР° РєРЅРёРіРё СЃ Id 5");
+		String newAuthor = "РљРѕР»РѕРґРёР№ Рџ.Р’.";
 		Book change = library.getBook(5);
 		LibraryLogic.changeAuthor(library, change, newAuthor);
-		System.out.println("\nБыло: " + change);
-		System.out.println("\nСтало: " + library.getBook(5));
-		System.out.println("\nБиблиотека после изменения одной из книг");
+		System.out.println("\nР‘С‹Р»Рѕ: " + change);
+		System.out.println("\nРЎС‚Р°Р»Рѕ: " + library.getBook(5));
+		System.out.println("\nР‘РёР±Р»РёРѕС‚РµРєР° РїРѕСЃР»Рµ РёР·РјРµРЅРµРЅРёСЏ РѕРґРЅРѕР№ РёР· РєРЅРёРі");
 		System.out.println(library.getLibrary());
-		System.out.println("\nКаталоги после изменения одной из книг");
-		System.out.println("\nНазвания изданий: " + library.getBookNames());
-		System.out.println("Авторы: " + library.getAuthors());
-		System.out.println("Издательства: " + library.getPublishingHouses());
-		System.out.println("Годы издания: " + library.getPublishingYears());
-		System.out.println("Виды публикаций: " + library.getKinds());
-		System.out.println("Ключ - Id, значение - индекс хранения: " + library.getIndices());
+		System.out.println("\nРљР°С‚Р°Р»РѕРіРё РїРѕСЃР»Рµ РёР·РјРµРЅРµРЅРёСЏ РѕРґРЅРѕР№ РёР· РєРЅРёРі");
+		System.out.println("\nРќР°Р·РІР°РЅРёСЏ РёР·РґР°РЅРёР№: " + library.getBookNames());
+		System.out.println("РђРІС‚РѕСЂС‹: " + library.getAuthors());
+		System.out.println("РР·РґР°С‚РµР»СЊСЃС‚РІР°: " + library.getPublishingHouses());
+		System.out.println("Р“РѕРґС‹ РёР·РґР°РЅРёСЏ: " + library.getPublishingYears());
+		System.out.println("Р’РёРґС‹ РїСѓР±Р»РёРєР°С†РёР№: " + library.getKinds());
+		System.out.println("РљР»СЋС‡ - Id, Р·РЅР°С‡РµРЅРёРµ - РёРЅРґРµРєСЃ С…СЂР°РЅРµРЅРёСЏ: " + library.getIndices());
 
 		
 		/*
-		 * запуск поиска по библиотеке
+		 * Р·Р°РїСѓСЃРє РїРѕРёСЃРєР° РїРѕ Р±РёР±Р»РёРѕС‚РµРєРµ
 		 */
 		LibraryLogic.choiseAction(library);
 	}
