@@ -4,7 +4,7 @@ import java.util.*;
 public class LibraryLogic {
 
 	/*
-	 * метод возвращает 0, если вниги ещё нет в библиотеке, 1 - если книга есть в библиотеке
+	 * РјРµС‚РѕРґ РІРѕР·РІСЂР°С‰Р°РµС‚ 0, РµСЃР»Рё РІРЅРёРіРё РµС‰С‘ РЅРµС‚ РІ Р±РёР±Р»РёРѕС‚РµРєРµ, 1 - РµСЃР»Рё РєРЅРёРіР° РµСЃС‚СЊ РІ Р±РёР±Р»РёРѕС‚РµРєРµ
 	 */
 	public static int checkDuplicateBook (Book book, List<Book> lib) {							
 		
@@ -21,7 +21,7 @@ public class LibraryLogic {
 	}
 	
 	/*
-	 * метод реализует запуск различных действий с библиотекой
+	 * РјРµС‚РѕРґ СЂРµР°Р»РёР·СѓРµС‚ Р·Р°РїСѓСЃРє СЂР°Р·Р»РёС‡РЅС‹С… РґРµР№СЃС‚РІРёР№ СЃ Р±РёР±Р»РёРѕС‚РµРєРѕР№
 	 */
 	public static void choiseAction(Library lib) {									
 		int mov = reqestToUser();
@@ -38,11 +38,11 @@ public class LibraryLogic {
 	}
 	
 	/*
-	 * метод запрашивает у пользоветеля вид действия
+	 * РјРµС‚РѕРґ Р·Р°РїСЂР°С€РёРІР°РµС‚ Сѓ РїРѕР»СЊР·РѕРІРµС‚РµР»СЏ РІРёРґ РґРµР№СЃС‚РІРёСЏ
 	 */
 	 static int reqestToUser() {													
-		LibraryView.messageToUser("\nДоступные критерии поиска: \n1)Вывести список книг заданного авора "
-				+ "\n2)Вывести список книг, выпущенных заданным издательством \n3)Вывести список книг, выпущенных в определённом году");
+		LibraryView.messageToUser("\nР”РѕСЃС‚СѓРїРЅС‹Рµ РєСЂРёС‚РµСЂРёРё РїРѕРёСЃРєР°: \n1)Р’С‹РІРµСЃС‚Рё СЃРїРёСЃРѕРє РєРЅРёРі Р·Р°РґР°РЅРЅРѕРіРѕ Р°РІРѕСЂР° "
+				+ "\n2)Р’С‹РІРµСЃС‚Рё СЃРїРёСЃРѕРє РєРЅРёРі, РІС‹РїСѓС‰РµРЅРЅС‹С… Р·Р°РґР°РЅРЅС‹Рј РёР·РґР°С‚РµР»СЊСЃС‚РІРѕРј \n3)Р’С‹РІРµСЃС‚Рё СЃРїРёСЃРѕРє РєРЅРёРі, РІС‹РїСѓС‰РµРЅРЅС‹С… РІ РѕРїСЂРµРґРµР»С‘РЅРЅРѕРј РіРѕРґСѓ");
 		boolean flag = false;
 		int mov = 0;
 		while (flag == false) {
@@ -50,20 +50,20 @@ public class LibraryLogic {
 			if (mov == 1 || mov == 2 || mov == 3) {
 				flag = true;
 			} else {
-				LibraryView.messageToUser("Данный вариант действий невозможен");
+				LibraryView.messageToUser("Р”Р°РЅРЅС‹Р№ РІР°СЂРёР°РЅС‚ РґРµР№СЃС‚РІРёР№ РЅРµРІРѕР·РјРѕР¶РµРЅ");
 			}
 		}
 		return mov;
 	}
 	
 	/*
-	 * Метод поиска изданий по автору
+	 * РњРµС‚РѕРґ РїРѕРёСЃРєР° РёР·РґР°РЅРёР№ РїРѕ Р°РІС‚РѕСЂСѓ
 	 */
 	static ArrayList<Book> searchAuthor (Library lib){					
 		
 		HashMap<String, ArrayList<Integer>>authors = lib.getAuthors();
-		final String s1 = "В библиотеке есть издания следующих авторов: ";
-		final String s2 = "Введите номер автора в списке";
+		final String s1 = "Р’ Р±РёР±Р»РёРѕС‚РµРєРµ РµСЃС‚СЊ РёР·РґР°РЅРёСЏ СЃР»РµРґСѓСЋС‰РёС… Р°РІС‚РѕСЂРѕРІ: ";
+		final String s2 = "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ Р°РІС‚РѕСЂР° РІ СЃРїРёСЃРєРµ";
 		String author = new String();
 		author = LibraryView.getArgumentToSearch (authors, s1,s2);
 		
@@ -77,13 +77,13 @@ public class LibraryLogic {
 	}
 	
 		/*
-		 * Метод поиска изданий по издательству
+		 * РњРµС‚РѕРґ РїРѕРёСЃРєР° РёР·РґР°РЅРёР№ РїРѕ РёР·РґР°С‚РµР»СЊСЃС‚РІСѓ
 		 */
 	static ArrayList<Book> searchPubHouse (Library lib){
 		
 		HashMap<String, ArrayList<Integer>>publishingHouses = lib.getPublishingHouses();
-		final String s1 = "В библиотеке есть издания следующих издательств: ";
-		final String s2 = "Введите номер издательства в списке";
+		final String s1 = "Р’ Р±РёР±Р»РёРѕС‚РµРєРµ РµСЃС‚СЊ РёР·РґР°РЅРёСЏ СЃР»РµРґСѓСЋС‰РёС… РёР·РґР°С‚РµР»СЊСЃС‚РІ: ";
+		final String s2 = "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РёР·РґР°С‚РµР»СЊСЃС‚РІР° РІ СЃРїРёСЃРєРµ";
 		String pubHouse = LibraryView.getArgumentToSearch (publishingHouses, s1,s2);
 		ArrayList<Book> ret = new ArrayList<Book>();
 		ArrayList<Integer> listIdBook = publishingHouses.get(pubHouse);
@@ -95,13 +95,13 @@ public class LibraryLogic {
 	}
 	
 	/*
-	 * Метод поиска изданий по году издания
+	 * РњРµС‚РѕРґ РїРѕРёСЃРєР° РёР·РґР°РЅРёР№ РїРѕ РіРѕРґСѓ РёР·РґР°РЅРёСЏ
 	 */
 	static ArrayList<Book> searchPubYear (Library lib){
 	
 		HashMap<Integer, ArrayList<Integer>>publishingYears = lib.getPublishingYears();
-		final String s1 = "В библиотеке есть издания следующих годов: ";
-		final String s2 = "Введите позицию года издания в списке";
+		final String s1 = "Р’ Р±РёР±Р»РёРѕС‚РµРєРµ РµСЃС‚СЊ РёР·РґР°РЅРёСЏ СЃР»РµРґСѓСЋС‰РёС… РіРѕРґРѕРІ: ";
+		final String s2 = "Р’РІРµРґРёС‚Рµ РїРѕР·РёС†РёСЋ РіРѕРґР° РёР·РґР°РЅРёСЏ РІ СЃРїРёСЃРєРµ";
 		int pubYears = LibraryView.getIntArgumentToSearch(publishingYears, s1,s2);
 		ArrayList<Book> ret = new ArrayList<Book>();
 		ArrayList<Integer> listIdBook = publishingYears.get(pubYears);
@@ -113,8 +113,8 @@ public class LibraryLogic {
 	}
 	
 	/*
-	 * Создаём каталог по наименованиям
-	 * Ключ - название издания, значение - список ID всех изданий с таким названием
+	 * РЎРѕР·РґР°С‘Рј РєР°С‚Р°Р»РѕРі РїРѕ РЅР°РёРјРµРЅРѕРІР°РЅРёСЏРј
+	 * РљР»СЋС‡ - РЅР°Р·РІР°РЅРёРµ РёР·РґР°РЅРёСЏ, Р·РЅР°С‡РµРЅРёРµ - СЃРїРёСЃРѕРє ID РІСЃРµС… РёР·РґР°РЅРёР№ СЃ С‚Р°РєРёРј РЅР°Р·РІР°РЅРёРµРј
 	 */
 	 static HashMap<String, ArrayList<Integer>> addName (Book book, HashMap<String, ArrayList<Integer>> map) {
 	
@@ -134,8 +134,8 @@ public class LibraryLogic {
 	}
 	
 	/*
-	 * Создаём каталог по авторам
-	 * Ключ - имя автора, значение - список ID всех книг этого автора
+	 * РЎРѕР·РґР°С‘Рј РєР°С‚Р°Р»РѕРі РїРѕ Р°РІС‚РѕСЂР°Рј
+	 * РљР»СЋС‡ - РёРјСЏ Р°РІС‚РѕСЂР°, Р·РЅР°С‡РµРЅРёРµ - СЃРїРёСЃРѕРє ID РІСЃРµС… РєРЅРёРі СЌС‚РѕРіРѕ Р°РІС‚РѕСЂР°
 	 */
 	 static HashMap<String, ArrayList<Integer>> addAuthor (Book book, HashMap<String, ArrayList<Integer>> map) {
 		
@@ -155,8 +155,8 @@ public class LibraryLogic {
 	}
 	
 	/*
-	 * Создаём каталог по издательствам
-	 * Ключ - издательство, значение - список ID всех книг этого издательства
+	 * РЎРѕР·РґР°С‘Рј РєР°С‚Р°Р»РѕРі РїРѕ РёР·РґР°С‚РµР»СЊСЃС‚РІР°Рј
+	 * РљР»СЋС‡ - РёР·РґР°С‚РµР»СЊСЃС‚РІРѕ, Р·РЅР°С‡РµРЅРёРµ - СЃРїРёСЃРѕРє ID РІСЃРµС… РєРЅРёРі СЌС‚РѕРіРѕ РёР·РґР°С‚РµР»СЊСЃС‚РІР°
 	 */
 	 static HashMap<String, ArrayList<Integer>> addPublishingHouse (Book book, HashMap<String, ArrayList<Integer>> map) {
 		
@@ -175,8 +175,8 @@ public class LibraryLogic {
 		}
 	}
 		/*
-		 * Создаём каталог по годам издания
-		 * Ключ - год издания, значение - список ID всех книг этого года
+		 * РЎРѕР·РґР°С‘Рј РєР°С‚Р°Р»РѕРі РїРѕ РіРѕРґР°Рј РёР·РґР°РЅРёСЏ
+		 * РљР»СЋС‡ - РіРѕРґ РёР·РґР°РЅРёСЏ, Р·РЅР°С‡РµРЅРёРµ - СЃРїРёСЃРѕРє ID РІСЃРµС… РєРЅРёРі СЌС‚РѕРіРѕ РіРѕРґР°
 		 */
 	 static HashMap<Integer, ArrayList<Integer>> addPublishingYear (Book book, HashMap<Integer, ArrayList<Integer>> map) {
 		
@@ -196,8 +196,8 @@ public class LibraryLogic {
 	}
 	
 	/*
-	 * Создаём каталог по видам изданий
-	 * Ключ - вид издания, значение - список ID всех изданий этого вида
+	 * РЎРѕР·РґР°С‘Рј РєР°С‚Р°Р»РѕРі РїРѕ РІРёРґР°Рј РёР·РґР°РЅРёР№
+	 * РљР»СЋС‡ - РІРёРґ РёР·РґР°РЅРёСЏ, Р·РЅР°С‡РµРЅРёРµ - СЃРїРёСЃРѕРє ID РІСЃРµС… РёР·РґР°РЅРёР№ СЌС‚РѕРіРѕ РІРёРґР°
 	 */
 	 static HashMap<String, ArrayList<Integer>> addKind (Book book, HashMap<String, ArrayList<Integer>> kinds) {
 	
@@ -217,8 +217,8 @@ public class LibraryLogic {
 	}
 	
 	/*
-	 * Создаём каталог в какой ячейке лежит издание с определённым Id
-	 * Ключ - Id, значение - индекс в массиве
+	 * РЎРѕР·РґР°С‘Рј РєР°С‚Р°Р»РѕРі РІ РєР°РєРѕР№ СЏС‡РµР№РєРµ Р»РµР¶РёС‚ РёР·РґР°РЅРёРµ СЃ РѕРїСЂРµРґРµР»С‘РЅРЅС‹Рј Id
+	 * РљР»СЋС‡ - Id, Р·РЅР°С‡РµРЅРёРµ - РёРЅРґРµРєСЃ РІ РјР°СЃСЃРёРІРµ
 	 */
 	
 	static HashMap <Integer, Integer> refreshIndices (ArrayList<Book> lib){
@@ -233,7 +233,7 @@ public class LibraryLogic {
 	}
 	
 	/*
-	 * Обновляем каталог названий
+	 * РћР±РЅРѕРІР»СЏРµРј РєР°С‚Р°Р»РѕРі РЅР°Р·РІР°РЅРёР№
 	 */
 	static HashMap <String, ArrayList<Integer>> refreshBookNames (ArrayList<Book> lib){
 	
@@ -260,7 +260,7 @@ public class LibraryLogic {
 	}
 	
 	/*
-	 * Обновляем каталог авторов
+	 * РћР±РЅРѕРІР»СЏРµРј РєР°С‚Р°Р»РѕРі Р°РІС‚РѕСЂРѕРІ
 	 */
 	static HashMap <String, ArrayList<Integer>> refreshBookAuthors (ArrayList<Book> lib){
 		
@@ -287,7 +287,7 @@ public class LibraryLogic {
 	}
 	
 	/*
-	 * Обновляем каталог издательств
+	 * РћР±РЅРѕРІР»СЏРµРј РєР°С‚Р°Р»РѕРі РёР·РґР°С‚РµР»СЊСЃС‚РІ
 	 */
 	static HashMap <String, ArrayList<Integer>> refreshPublishingHouses (ArrayList<Book> lib){
 		
@@ -314,7 +314,7 @@ public class LibraryLogic {
 	}
 	
 	/*
-	 * Обновляем каталог годов издания
+	 * РћР±РЅРѕРІР»СЏРµРј РєР°С‚Р°Р»РѕРі РіРѕРґРѕРІ РёР·РґР°РЅРёСЏ
 	 */
 	static HashMap <Integer, ArrayList<Integer>> refreshPublishingYears (ArrayList<Book> lib){
 		
@@ -341,7 +341,7 @@ public class LibraryLogic {
 	}
 	
 	/*
-	 * Обновляем каталог видов изданий
+	 * РћР±РЅРѕРІР»СЏРµРј РєР°С‚Р°Р»РѕРі РІРёРґРѕРІ РёР·РґР°РЅРёР№
 	 */
 	static HashMap <String, ArrayList<Integer>> refreshKinds (ArrayList<Book> lib){
 		
@@ -368,15 +368,15 @@ public class LibraryLogic {
 	}
 	
 	/*
-	 * Метод удаляет издание с определённым наименованием из каталога
-	 * Если для данного наименования не осталось изданий, то удаляется само наименование.
+	 * РњРµС‚РѕРґ СѓРґР°Р»СЏРµС‚ РёР·РґР°РЅРёРµ СЃ РѕРїСЂРµРґРµР»С‘РЅРЅС‹Рј РЅР°РёРјРµРЅРѕРІР°РЅРёРµРј РёР· РєР°С‚Р°Р»РѕРіР°
+	 * Р•СЃР»Рё РґР»СЏ РґР°РЅРЅРѕРіРѕ РЅР°РёРјРµРЅРѕРІР°РЅРёСЏ РЅРµ РѕСЃС‚Р°Р»РѕСЃСЊ РёР·РґР°РЅРёР№, С‚Рѕ СѓРґР°Р»СЏРµС‚СЃСЏ СЃР°РјРѕ РЅР°РёРјРµРЅРѕРІР°РЅРёРµ.
 	 */
 	 static void delName (Book book, HashMap<String, ArrayList<Integer>> map) {
 	
-		String bookName = book.getBookName();			//название издания
+		String bookName = book.getBookName();			//РЅР°Р·РІР°РЅРёРµ РёР·РґР°РЅРёСЏ
 		int Id = book.getId();
 		if (map.containsKey(bookName)){
-			ArrayList<Integer> listId = map.get(bookName);	//список ID 
+			ArrayList<Integer> listId = map.get(bookName);	//СЃРїРёСЃРѕРє ID 
 			listId.remove(listId.indexOf(Id));
 			if (listId.size() <=0) {
 				map.remove(bookName);
@@ -384,13 +384,13 @@ public class LibraryLogic {
 			}
 			map.put(bookName, listId);
 		} else {
-			LibraryView.messageToUser("Авария, наименование отсутствует в каталоге");
+			LibraryView.messageToUser("РђРІР°СЂРёСЏ, РЅР°РёРјРµРЅРѕРІР°РЅРёРµ РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚ РІ РєР°С‚Р°Р»РѕРіРµ");
 		}
 	}
 	
 	/*
-	 * Метод удаляет издание определённого автора  из каталога 
-	 * Если для данного автора не осталось изданий, то удаляется сам автор.
+	 * РњРµС‚РѕРґ СѓРґР°Р»СЏРµС‚ РёР·РґР°РЅРёРµ РѕРїСЂРµРґРµР»С‘РЅРЅРѕРіРѕ Р°РІС‚РѕСЂР°  РёР· РєР°С‚Р°Р»РѕРіР° 
+	 * Р•СЃР»Рё РґР»СЏ РґР°РЅРЅРѕРіРѕ Р°РІС‚РѕСЂР° РЅРµ РѕСЃС‚Р°Р»РѕСЃСЊ РёР·РґР°РЅРёР№, С‚Рѕ СѓРґР°Р»СЏРµС‚СЃСЏ СЃР°Рј Р°РІС‚РѕСЂ.
 	 */
 	 static void delAuthor (Book book, HashMap<String, ArrayList<Integer>> map) {
 	
@@ -406,7 +406,7 @@ public class LibraryLogic {
 			}
 			map.put(bookAuthor, listId);
 		} else {
-			LibraryView.messageToUser("Авария, автор отсутствует в каталоге");
+			LibraryView.messageToUser("РђРІР°СЂРёСЏ, Р°РІС‚РѕСЂ РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚ РІ РєР°С‚Р°Р»РѕРіРµ");
 		}
 	}
 	 
@@ -423,7 +423,7 @@ public class LibraryLogic {
 			}
 			map.put(bookPublishingYear, listId);
 		} else {
-			LibraryView.messageToUser("Авария, год издания отсутствует в каталоге");
+			LibraryView.messageToUser("РђРІР°СЂРёСЏ, РіРѕРґ РёР·РґР°РЅРёСЏ РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚ РІ РєР°С‚Р°Р»РѕРіРµ");
 		}
 	}
 	 static void delPublishingHouse (Book book, HashMap<String, ArrayList<Integer>> map) {
@@ -439,7 +439,7 @@ public class LibraryLogic {
 			}
 			map.put(bookPublishingHouse, listId);
 		} else {
-			LibraryView.messageToUser("Авария, издательство отсутствует в каталоге");
+			LibraryView.messageToUser("РђРІР°СЂРёСЏ, РёР·РґР°С‚РµР»СЊСЃС‚РІРѕ РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚ РІ РєР°С‚Р°Р»РѕРіРµ");
 		}
 	}
 	
@@ -456,7 +456,7 @@ public class LibraryLogic {
 			}
 			map.put(bookKind, listId);
 		} else {
-			LibraryView.messageToUser("Авария, вид издания отсутствует в каталоге");
+			LibraryView.messageToUser("РђРІР°СЂРёСЏ, РІРёРґ РёР·РґР°РЅРёСЏ РѕС‚СЃСѓС‚СЃС‚РІСѓРµС‚ РІ РєР°С‚Р°Р»РѕРіРµ");
 		}
 	}
 	 static void  delIndex(Book book, HashMap<Integer, Integer>indices) {
@@ -466,7 +466,7 @@ public class LibraryLogic {
 	}
 	
 	 /*
-	  * метод изменяет автора книги и запускает обновление каталога авторов
+	  * РјРµС‚РѕРґ РёР·РјРµРЅСЏРµС‚ Р°РІС‚РѕСЂР° РєРЅРёРіРё Рё Р·Р°РїСѓСЃРєР°РµС‚ РѕР±РЅРѕРІР»РµРЅРёРµ РєР°С‚Р°Р»РѕРіР° Р°РІС‚РѕСЂРѕРІ
 	  */
 	 static void changeAuthor (Library lib, Book book, String newAuthor) {
 	
@@ -476,7 +476,7 @@ public class LibraryLogic {
 	 }
 	 
 	 /*
-	  * метод изменяет название книги и запускает обновление каталога названий
+	  * РјРµС‚РѕРґ РёР·РјРµРЅСЏРµС‚ РЅР°Р·РІР°РЅРёРµ РєРЅРёРіРё Рё Р·Р°РїСѓСЃРєР°РµС‚ РѕР±РЅРѕРІР»РµРЅРёРµ РєР°С‚Р°Р»РѕРіР° РЅР°Р·РІР°РЅРёР№
 	  */
 	 static void changeBookName (Library lib, Book book, String newName) {
 	
@@ -486,7 +486,7 @@ public class LibraryLogic {
 	 }
 	 
 	 /*
-	  * метод изменяет издательство книги и запускает обновление каталога издательств
+	  * РјРµС‚РѕРґ РёР·РјРµРЅСЏРµС‚ РёР·РґР°С‚РµР»СЊСЃС‚РІРѕ РєРЅРёРіРё Рё Р·Р°РїСѓСЃРєР°РµС‚ РѕР±РЅРѕРІР»РµРЅРёРµ РєР°С‚Р°Р»РѕРіР° РёР·РґР°С‚РµР»СЊСЃС‚РІ
 	  */
 	 static void changePublishingHouse (Library lib, Book book, String newHouse) {
 	
@@ -496,7 +496,7 @@ public class LibraryLogic {
 	 }
 	 
 	 /*
-	  * метод изменяет год издания книги и запускает обновление каталога годов издания
+	  * РјРµС‚РѕРґ РёР·РјРµРЅСЏРµС‚ РіРѕРґ РёР·РґР°РЅРёСЏ РєРЅРёРіРё Рё Р·Р°РїСѓСЃРєР°РµС‚ РѕР±РЅРѕРІР»РµРЅРёРµ РєР°С‚Р°Р»РѕРіР° РіРѕРґРѕРІ РёР·РґР°РЅРёСЏ
 	  */
 	 static void changePublishingYear (Library lib, Book book, int newYear) {
 	
@@ -506,7 +506,7 @@ public class LibraryLogic {
 	 }
 	 
 	 /*
-	  * метод изменяет вид издания  и запускает обновление каталога видов изданий
+	  * РјРµС‚РѕРґ РёР·РјРµРЅСЏРµС‚ РІРёРґ РёР·РґР°РЅРёСЏ  Рё Р·Р°РїСѓСЃРєР°РµС‚ РѕР±РЅРѕРІР»РµРЅРёРµ РєР°С‚Р°Р»РѕРіР° РІРёРґРѕРІ РёР·РґР°РЅРёР№
 	  */
 	 static void changeKinds (Library lib, Book book, String newKind) {
 	
