@@ -37,7 +37,7 @@ public class Library {
 	
 	public void addBook(Book book) {
 		final int flag = LibraryLogic.checkDuplicateBook(book, library);
-		final String message = "Данная книга уже есть в каталоге";
+		final String message = "Р”Р°РЅРЅР°СЏ РєРЅРёРіР° СѓР¶Рµ РµСЃС‚СЊ РІ РєР°С‚Р°Р»РѕРіРµ";
 		if (flag == 0) {
 			this.library.add(book);
 			LibraryLogic.addName(book, bookNames);
