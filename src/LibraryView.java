@@ -4,7 +4,7 @@ import java.util.*;
 public class LibraryView {
 
 	/*
-	 * Для вывода сообщений пользователю
+	 * Р”Р»СЏ РІС‹РІРѕРґР° СЃРѕРѕР±С‰РµРЅРёР№ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
 	 */
 public static void messageToUser(String message){
 		
@@ -12,11 +12,11 @@ public static void messageToUser(String message){
 	}
 
 /*
- * метод получает от пользователя вид действия
+ * РјРµС‚РѕРґ РїРѕР»СѓС‡Р°РµС‚ РѕС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РІРёРґ РґРµР№СЃС‚РІРёСЏ
  */
 	public static int requestToUser () {									
-		final String s1 = "\nВыберите необходимое действие";
-		final String s2 = "Данный вариант действий невозможен";
+		final String s1 = "\nР’С‹Р±РµСЂРёС‚Рµ РЅРµРѕР±С…РѕРґРёРјРѕРµ РґРµР№СЃС‚РІРёРµ";
+		final String s2 = "Р”Р°РЅРЅС‹Р№ РІР°СЂРёР°РЅС‚ РґРµР№СЃС‚РІРёР№ РЅРµРІРѕР·РјРѕР¶РµРЅ";
 		int flag = 0;
 		@SuppressWarnings("resource")
 		Scanner s = new Scanner (System.in);
@@ -32,8 +32,8 @@ public static void messageToUser(String message){
 	}
 	
 	/*
-	 * получаем строковое значение для поиска
-	 * проверка вводимого нужна, но её нет(
+	 * РїРѕР»СѓС‡Р°РµРј СЃС‚СЂРѕРєРѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ РґР»СЏ РїРѕРёСЃРєР°
+	 * РїСЂРѕРІРµСЂРєР° РІРІРѕРґРёРјРѕРіРѕ РЅСѓР¶РЅР°, РЅРѕ РµС‘ РЅРµС‚(
 	 */
 	static String getArgumentToSearch (HashMap<String, ArrayList<Integer>> argumentList, String s1, String s2) {		
 		
@@ -56,8 +56,8 @@ public static void messageToUser(String message){
 	}
 	
 	/*
-	 * получаем числовое значение для поиска
-	 * проверка вводимого нужна, но её нет(
+	 * РїРѕР»СѓС‡Р°РµРј С‡РёСЃР»РѕРІРѕРµ Р·РЅР°С‡РµРЅРёРµ РґР»СЏ РїРѕРёСЃРєР°
+	 * РїСЂРѕРІРµСЂРєР° РІРІРѕРґРёРјРѕРіРѕ РЅСѓР¶РЅР°, РЅРѕ РµС‘ РЅРµС‚(
 	 */
 	static int getIntArgumentToSearch (HashMap<Integer, ArrayList<Integer>> argumentList, String s1, String s2) {		
 		
@@ -75,8 +75,8 @@ public static void messageToUser(String message){
 		@SuppressWarnings("resource")
 		Scanner s = new Scanner (System.in);
 		while(!s.hasNextInt()) {
-			messageToUser("Введена не цифра");
-			messageToUser("ВВедите номер необходимого варианта");
+			messageToUser("Р’РІРµРґРµРЅР° РЅРµ С†РёС„СЂР°");
+			messageToUser("Р’Р’РµРґРёС‚Рµ РЅРѕРјРµСЂ РЅРµРѕР±С…РѕРґРёРјРѕРіРѕ РІР°СЂРёР°РЅС‚Р°");
 			s = new Scanner (System.in);
 			}	
 		int num = s.nextInt();
@@ -92,16 +92,16 @@ public static void messageToUser(String message){
 		
 		String pubHouse = null;
 		//String trash = null;
-		messageToUser("В библиотеке есть книги следующих издательств: ");
+		messageToUser("Р’ Р±РёР±Р»РёРѕС‚РµРєРµ РµСЃС‚СЊ РєРЅРёРіРё СЃР»РµРґСѓСЋС‰РёС… РёР·РґР°С‚РµР»СЊСЃС‚РІ: ");
 		System.out.println(list);
-		messageToUser("Выберите необходимое издательство");
+		messageToUser("Р’С‹Р±РµСЂРёС‚Рµ РЅРµРѕР±С…РѕРґРёРјРѕРµ РёР·РґР°С‚РµР»СЊСЃС‚РІРѕ");
 		@SuppressWarnings("resource")
 		Scanner s = new Scanner (System.in);
 		pubHouse = s.nextLine();
 		pubHouse = pubHouse.toUpperCase();
 		while(!list.contains(pubHouse)) {
-			messageToUser("Книги выбранного издательства отсутствуют в библиотеке");
-			messageToUser("В библиотеке есть книги следующих издательств: ");
+			messageToUser("РљРЅРёРіРё РІС‹Р±СЂР°РЅРЅРѕРіРѕ РёР·РґР°С‚РµР»СЊСЃС‚РІР° РѕС‚СЃСѓС‚СЃС‚РІСѓСЋС‚ РІ Р±РёР±Р»РёРѕС‚РµРєРµ");
+			messageToUser("Р’ Р±РёР±Р»РёРѕС‚РµРєРµ РµСЃС‚СЊ РєРЅРёРіРё СЃР»РµРґСѓСЋС‰РёС… РёР·РґР°С‚РµР»СЊСЃС‚РІ: ");
 			System.out.println(list);
 			s = new Scanner (System.in);
 			pubHouse = s.nextLine();
@@ -111,14 +111,14 @@ public static void messageToUser(String message){
 	}
 	
 	public static int requestYear (TreeSet<Integer> list) {
-		messageToUser("В библиотеке есть книги изданные в следующие годы: ");
+		messageToUser("Р’ Р±РёР±Р»РёРѕС‚РµРєРµ РµСЃС‚СЊ РєРЅРёРіРё РёР·РґР°РЅРЅС‹Рµ РІ СЃР»РµРґСѓСЋС‰РёРµ РіРѕРґС‹: ");
 		System.out.println(list);
-		messageToUser("Выберите необходимый год");
+		messageToUser("Р’С‹Р±РµСЂРёС‚Рµ РЅРµРѕР±С…РѕРґРёРјС‹Р№ РіРѕРґ");
 		@SuppressWarnings("resource")
 		Scanner s = new Scanner (System.in);
 		while(!s.hasNextInt()) {
-			messageToUser("Введена не цифра");
-			messageToUser("Выберите необходимый год");
+			messageToUser("Р’РІРµРґРµРЅР° РЅРµ С†РёС„СЂР°");
+			messageToUser("Р’С‹Р±РµСЂРёС‚Рµ РЅРµРѕР±С…РѕРґРёРјС‹Р№ РіРѕРґ");
 			@SuppressWarnings("unused")
 			String trash = s.nextLine();
 		}
