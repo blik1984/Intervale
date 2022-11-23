@@ -26,10 +26,10 @@ public class Book implements java.io.Serializable {
 		this.publishingYear = publishingYear;
 		this.numberPages = numberPages;
 		this.price = price;
-		final String s1 = "книга";
-		final String s2 = "журнал";
-		final String s3 = "газета";
-		final String s4 = "неизвестно";
+		final String s1 = "РєРЅРёРіР°";
+		final String s2 = "Р¶СѓСЂРЅР°Р»";
+		final String s3 = "РіР°Р·РµС‚Р°";
+		final String s4 = "РЅРµРёР·РІРµСЃС‚РЅРѕ";
 		if (kind.compareToIgnoreCase(s1) == 0 ||kind.compareToIgnoreCase(s2) == 0 ||kind.compareToIgnoreCase(s3) == 0) {
 			this.kind = kind;
 		} else {
@@ -78,11 +78,10 @@ public class Book implements java.io.Serializable {
 		return kind;
 	}
 	public void setKind(String kind) {
-		final String s1 = "книга";
-		final String s2 = "журнал";
-		final String s3 = "газета";
-		final String s4 = "неизвестно";
-
+		final String s1 = "РєРЅРёРіР°";
+		final String s2 = "Р¶СѓСЂРЅР°Р»";
+		final String s3 = "РіР°Р·РµС‚Р°";
+		final String s4 = "РЅРµРёР·РІРµСЃС‚РЅРѕ";
 		if (kind.compareToIgnoreCase(s1) == 0 ||kind.compareToIgnoreCase(s2) == 0 ||kind.compareToIgnoreCase(s3) == 0) {
 			this.kind = kind;
 		} else {
